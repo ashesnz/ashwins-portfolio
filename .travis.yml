@@ -12,8 +12,8 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "ap-southeast-2"
-  app: "ashwins-portfolio"
-  env: "AshwinsPortfolio-env"
+  app: "ashwin-portfolio"
+  env: "AshwinPortfolio-env"
   bucket_name: "elasticbeanstalk-ap-southeast-2-311794631399"
   bucket_path: "ashwins-portfolio"
   on:
