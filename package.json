@@ -42,16 +42,12 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ashesnz/portfolio2020.git"
+    "url": "git+https://github.com/ashesnz/ashwins-portfolio.git"
   },
   "keywords": [
     "portfolio"
   ],
   "author": "ashwinthakur",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ashesnz/portfolio2020/issues"
-  },
-  "homepage": "https://github.com/ashesnz/portfolio2020#readme",
   "devDependencies": {}
 }
