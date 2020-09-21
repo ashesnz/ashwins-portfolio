@@ -168,7 +168,8 @@ const database = {
         year: "Dec 2019 - Present",
         position: "Software Developer",
         company: "Livestock Improvement Automation",
-        details: ""
+        details: ".NET and Angular development with Azure DevOps, upgrading their core automation product Protrack Shed. Agile processes were used, working closely with Product Owners/Product design Analysts/Testers and other developers in delivering " +
+            "these core features."
       },
       {
         id: 2,
