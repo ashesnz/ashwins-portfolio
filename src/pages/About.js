@@ -118,14 +118,24 @@ function About(){
       </div>
       <div className="mi-service-area mi-section mi-padding-top">
         <div className="container">
-          <Sectiontitle title="Hobbies" />
+          <Sectiontitle padBottom={true} title="Hobbies" />
           <div className="row justify-content-center">
             <div className="col-12">
-              {/*<Slider className="mi-testimonial-slider" {...sliderSettings}>
-                {reviews.map(review =>(
-                    <Testimonial key={review.id} content={review}/>
-                ))}
-              </Slider>*/}
+              <li>
+                Rugby
+              </li>
+              <li>
+                Rugby League
+              </li>
+              <li>
+                Cricket
+              </li>
+              <li>
+                Poker
+              </li>
+              <li>
+                Crosswords
+              </li>
             </div>
           </div>
         </div>
