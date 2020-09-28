@@ -3,21 +3,21 @@
   "containerDefinitions": [
     {
       "name": "web",
-      "image": "ashesnz/multi-web",
+      "image": "ashesnz/ashwins-portfolio-web",
       "hostname": "web",
       "essential": false,
       "memory": 128
     },
     {
       "name": "server",
-      "image": "ashesnz/multi-server",
+      "image": "ashesnz/ashwins-portfolio-server",
       "hostname": "api",
       "essential": false,
       "memory": 128
     },
     {
       "name": "ngnix",
-      "image": "ashesnz/multi-nginx",
+      "image": "ashesnz/ashwins-portfolio-nginx",
       "hostname": "ngnix",
       "essential": true,
       "portMappings": [
