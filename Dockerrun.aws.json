@@ -1,0 +1,36 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "web",
+      "image": "ashesnz/multi-web",
+      "hostname": "web",
+      "essential": false,
+      "memory": 128
+    },
+    {
+      "name": "server",
+      "image": "ashesnz/multi-server",
+      "hostname": "api",
+      "essential": false,
+      "memory": 128
+    },
+    {
+      "name": "ngnix",
+      "image": "ashesnz/multi-nginx",
+      "hostname": "ngnix",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": [
+        "web",
+        "server"
+      ],
+      "memory": 128
+    }
+  ]
+}

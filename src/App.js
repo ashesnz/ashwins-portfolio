@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Resumes from "./pages/Resumes";
 import Portfolios from "./pages/Portfolios";
 import Contact from "./pages/Contact";
+import Fib from './pages/Fib';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/resume" component={Resumes} />
      {/*   <Route path="/portfolios" component={Portfolios} />*/}
         <Route path="/contact" component={Contact} />
+        <Route path="/fib" component={Fib} />
       </Switch>
     </BrowserRouter>
   );

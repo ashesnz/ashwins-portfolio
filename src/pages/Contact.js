@@ -18,40 +18,28 @@ function Contact(){
   const [message, setMessage] = useState("");
 
 
-  const submitHandler = (event) =>{
+  const submitHandler = async (event) => {
     event.preventDefault();
-    if( !formdata.name ){
+    if (!formdata.name) {
       setError(true);
       setMessage('Name is required');
-    } else if( !formdata.email ){
+    } else if (!formdata.email) {
       setError(true);
       setMessage('Email is required');
-    } else if( !formdata.subject ){
+    } else if (!formdata.subject) {
       setError(true);
       setMessage('Subject is required');
-    } else if( !formdata.message ){
+    } else if (!formdata.message) {
       setError(true);
       setMessage('Message is required');
-    } else{
+    } else {
       setError(false);
       setMessage('You message has been sent!');
-      const form = event.target;
-      const data = new FormData(form);
-      const xhr = new XMLHttpRequest();
-      xhr.open(form.method, form.action);
-      xhr.setRequestHeader("Accept", "application/json");
-      xhr.onreadystatechange = () => {
-        if (xhr.readyState !== XMLHttpRequest.DONE) return;
-        if (xhr.status === 200) {
-          form.reset();
-          setError(false);
-          setMessage('You message has been sent!');
-        } else {
-          setError(true);
-          setMessage("There's been an error!");
-        }
-      };
-      xhr.send(data);
+      event.preventDefault();
+
+      await axios.post('/api/sendemail', {
+        formdata: formdata
+      });
     }
   }
   const handleChange = (event) => {
@@ -101,7 +89,7 @@ function Contact(){
             <div className="col-lg-6">
               <div className="mi-contact-formwrapper">
                 <h4>Get In Touch</h4>
-                <form action="https://formspree.io/xzbeqbjq" method="POST" className="mi-form mi-contact-form" onSubmit={submitHandler}>
+                <form method="POST" className="mi-form mi-contact-form" onSubmit={submitHandler}>
                   <div className="mi-form-field">
                     <label htmlFor="contact-form-name">Enter your name*</label>
                     <input onChange={handleChange} type="text" name="name" id="contact-form-name" value={formdata.name}/>
