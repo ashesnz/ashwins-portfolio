@@ -29,12 +29,17 @@ app.get('/',(req, res) => {
 
 app.post('/sendemail', async (req, res) => {
     if (req && req.body && req.body.formdata) {
-        console.log(req.body.formdata);
         const mailData = {
             from: 'ashwin@thakur.co.nz',  // sender address
             to: 'ashwin@thakur.co.nz',   // list of receivers
-            subject: 'Sending Email using Node.js',
-            text: 'That was easy!'
+            subject: 'Email from Ashwin Portfolio',
+            text: `Details
+            ---------------------------------------------------------------
+            Name: ${req.body.formdata.name}
+            Email: ${req.body.formdata.email}
+            Subject: ${req.body.formdata.subject}
+            Message: ${req.body.formdata.message}
+            ---------------------------------------------------------------`
         };
 
         transporter.sendMail(mailData, (error, info) => {
