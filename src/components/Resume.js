@@ -10,7 +10,7 @@ function Resume(props) {
       <div className="mi-resume-details">
         <h5>{position || graduation}</h5>
         <h6 className="mi-resume-company">{company || university}</h6>
-        <p>{details}</p>
+        <p className="mi-resume-pre-wrap">{details}</p>
       </div>
     </div>
   );

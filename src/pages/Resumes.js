@@ -6,13 +6,22 @@ import Smalltitle from '../components/Smalltitle';
 import Layout from "../components/Layout";
 import Progress from "../components/Progress";
 import Resume from "../components/Resume";
+import FsLightbox from "fslightbox-react";
+import { Link } from 'react-router-dom';
 
 function Resumes(){
+  const [toggler, setToggler] = useState(false);
   const [skills, setSkills] = useState([]);
+  const [achievements, setAchievements] = useState({});
   const [workingExperience, setWorkingExperience] = useState([]);
   const [educationExperience, setEducationExperience] = useState([]);
 
   useEffect(() =>{
+    axios.get('/api/achievements')
+        .then(response =>{
+          console.log(response.data);
+          setAchievements(response.data);
+        })
     axios.get('/api/skills')
       .then(response =>{
         setSkills(response.data);
@@ -34,6 +43,26 @@ function Resumes(){
             {workingExperience.map(workingExp => (
               <Resume key={workingExp.id} resumeData={workingExp} />
             ))}
+          </div>
+          <div className="mt-30"></div>
+          <Smalltitle title="Achievements" icon="star" />
+          <div className="mi-resume mt-30">
+            <div className="mi-resume-summary">
+            </div>
+            <div className="mi-resume-details">
+              <h6 className="mi-resume-company">Chief Executive Award received for leading the implementation of the <Link to="/resume" onClick={() => setToggler(!toggler)}>SPACE programme.</Link></h6>
+            </div>
+            <FsLightbox
+                toggler={ toggler }
+                sources={ [achievements.spaceAwardImage] }
+            />
+          </div>
+          <div className="mi-resume mt-30">
+            <div className="mi-resume-summary">
+            </div>
+            <div className="mi-resume-details">
+              <h6 className="mi-resume-company">Attended New Zealand Hi-Tech Awards in 2019 for the finalist in the category for Hi-Tech Solution for the Agritech Sector.</h6>
+            </div>
           </div>
           <div className="mt-30"></div>
           <Smalltitle title="Educational Qualifications" icon="book" />

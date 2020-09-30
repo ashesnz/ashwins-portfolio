@@ -9,6 +9,23 @@ const database = {
     email: 'ashwin@thakur.co.nz',
     address: '',
     nationality: 'New Zealand Citizen',
+    hobbies: [
+      {
+        title: "Rugby"
+      },
+      {
+        title: "Rugby League"
+      },
+      {
+        title: "Cricket"
+      },
+      {
+        title: "Poker"
+      },
+      {
+        title: "Cryptic Crosswords"
+      }
+    ],
     socialLinks: {
       facebook: '',
       twitter: '',
@@ -40,23 +57,6 @@ const database = {
       details: "Has worked on major projects in teams, planning and coordinating with several people at once to develop entire applications."
     }
   ],
-  hobbies: [
-    {
-      title: "Rugby"
-    },
-    {
-      title: "Rugby League"
-    },
-    {
-      title: "Cricket"
-    },
-    {
-      title: "Poker"
-    },
-    {
-      title: "Cryptic Crosswords"
-    }
-  ],
   skills: [
     {
       title: "Front-end frameworks (React, Angular, VueJS for web & mobile development \n" +
@@ -84,81 +84,53 @@ const database = {
       value: 85
     }
   ],
+  achievements:
+  {
+    spaceAwardImage: '/images/space-award.jpg',
+  }
+  ,
   portfolios: [
     {
       id: 1,
-      title: "Guessing Game",
-      subtitle: "HTML, CSS, Javastript",
-      imageUrl: "/images/portfolio-image-1.jpg",
-      // largeImageUrl: ["/images/portfolio-image-1-lg.jpg"],
-      url: 'https://ashesnz.github.io/guessinggame/'
+      title: "SPACE - Satellite Pasture Measurement Admin Platform",
+      subtitle: "Angular, Ruby, AWS, Postgres",
+      imageUrl: "/images/portfolio-space.jpg",
+   //   url: './portfolios/space'
     },
     {
       id: 2,
-      title: "Gem Mining",
-      subtitle: "HTML, CSS, JavaScript, jQuery",
-      imageUrl: "/images/portfolio-image-2.jpg",
-      // largeImageUrl: ["/images/portfolio-image-2-lg.jpg"],
-      url: 'https://pinterest.com'
+      title: "Grazing Planner Mobile Application",
+      subtitle: "Ionic Framework, Ruby, Docker, Postgres",
+      imageUrl: "/images/portfolio-grazing.jpg",
+   //   url: './portfolios/grazing'
     },
     {
       id: 3,
-      title: "Trivia Game",
-      subtitle: "HTML, jQuery, Timers",
-      imageUrl: "/images/portfolio-image-3.jpg",
-      // largeImageUrl: ["/images/portfolio-image-3-lg.jpg"],
-      url: 'https://ashesnz.github.io/trivia_game/'
+      title: "International Sire Selection Tool",
+      subtitle: "React, Redux, .NET, Postgres, Docker",
+      imageUrl: "/images/portfolio-sire-selection.jpg",
+   //   url: './portfolios/sire-selection'
     },
     {
       id: 4,
-      title: "Gif Generator",
-      subtitle: "API, JSON, Ajax",
-      imageUrl: "/images/portfolio-image-4.jpg",
-      // largeImageUrl: [
-      //   "/images/portfolio-image-4-lg.jpg",
-      //   "/images/portfolio-image-4-lg2.jpg"
-      // ],
-      url: 'https://ashesnz.github.io/gifgenerator/'
+      title: "Knowledge Base App - Ask & Tag Staff members with particular skillsets or knowledge",
+      subtitle: "Vue.js, Ruby, Docker, AWS",
+      imageUrl: "/images/portfolio-knowledge-base.jpg",
+  //    url: './portfolios/knowledge-base'
     },
     {
       id: 5,
-      title: "Firebase Train Scheduler",
-      subtitle: "Firebase, HTML, JavaScript",
-      imageUrl: "/images/portfolio-image-5.jpg",
+      title: "Project Alive - Geospatial Tool For Ethiopian Livestock & Regions",
+      subtitle: "Vue.js, GIS, Postgres, AWS (Lambdas)",
+      imageUrl: "/images/portfolio-project-alive.jpg",
       // largeImageUrl: ["/images/portfolio-image-5-lg.jpg"],
-      url: 'https://ashesnz.github.io/trainschedule/'
+   //   url: './portfolios/project-alive'
     },
     {
       id: 6,
-      title: "Burger Time",
-      subtitle: "Mongo, Express, Node",
-      imageUrl: "/images/portfolio-image-6.jpg",
-      // largeImageUrl: ["/images/portfolio-image-6-lg.jpg"],
-      url: 'https://damp-mountain-93742.herokuapp.com/burgers'
-    },
-    {
-      id: 7,
-      title: "React Shuffle",
-      subtitle: "React",
-      imageUrl: "/images/portfolio-image-7.jpg",
-      // largeImageUrl: ["/images/portfolio-image-7-lg.jpg"],
-      url: 'https://react-gameucbextension2018.herokuapp.com/'
-    },
-    {
-      id: 8,
-      title: "NYT Article Scraper",
-      subtitle: "React, Mongoose, Cheerio",
-      imageUrl: "/images/portfolio-image-8.jpg",
-      // largeImageUrl: ["/images/portfolio-image-8-lg.jpg"],
-      url: 'https://young-river-49658.herokuapp.com/'
-    },
-    {
-      id: 9,
-      title: "Demoquest",
-      subtitle: "Mongoose, Express, React, Node",
-      imageUrl: "/images/portfolio-image-9.jpg",
-      // largeImageUrl: ["/images/portfolio-image-9-lg.jpg"],
-      url: 'https://demoquest.herokuapp.com/'
+      title: "Poker Analyzer - Gather stats on opponents while playing online",
+      subtitle: "React, .Net, Postgres, Docker",
+      imageUrl: "/images/portfolio-poker.jpg"
     }
   ],
   experience: {
@@ -168,7 +140,9 @@ const database = {
         year: "Dec 2019 - Present",
         position: "Software Developer",
         company: "Livestock Improvement Automation",
-        details: ".NET and Angular development with Azure DevOps, upgrading their core automation product Protrack Shed. Agile processes were used, working closely with Product Owners/Product design Analysts/Testers and other developers in delivering " +
+        details: ".NET and Angular development with Azure DevOps, upgrading their core automation product (Protrack™). " +
+            "Agile processes such as team iteration planning and retrospective and a 3 monthly PI Planning session." +
+            " Requirements were discussed closely with Product Owners/Product design Analysts/Testers and other developers in delivering " +
             "these core features."
       },
       {
@@ -178,10 +152,9 @@ const database = {
         company: "Livestock Improvement Corporation",
         details: "Responsible for building web applications with the use of UX best practice to deliver consumer-centric solutions. Worked with our core users (farmers) to paper-prototype, digital-prototype and then build solutions. \n" +
             "\n" +
-            "Core projects\n" +
+            "Core projects included:\r\n" +
             "\n" +
-            "\n" +
-            "Pasture satellite integration with external parties (thru APIs) in delivering an auditing tool for our internal staff to help validate pasture reports for our external customers.\n" +
+            "Pasture satellite integration with external parties (thru APIs) in delivering an auditing tool for our internal staff to help validate pasture reports for our external customers." +
             "\n" +
             "Grazing planning mobile (Progressive web application) to help farmers manage their paddocks on their device with the help of LIC’s core feed management system (MINDA Land & Feed).  \n" +
             "\n" +
@@ -205,7 +178,7 @@ const database = {
         year: "2004 - 2012",
         position: "IT Programmer",
         company: "Hills Laboratories",
-        details: "Eight years’ experience with the use of Delphi 5, 7 and 2006, 2010. This involved working on one of the most important and largest projects for the company, upgrading their laboratory system (LabSys2™ to LabSys3 ). The system was designed and built using object-oriented techniques with the use of several ActiveX controls and accesses an in-house database (Firebird). \n" +
+        details: "Eight years’ experience with the use of Delphi 5, 7 and 2006, 2010. This involved working on one of the most important and largest projects for the company, upgrading their laboratory system (LabSys2™ to LabSys3™ ). The system was designed and built using object-oriented techniques with the use of several ActiveX controls and accesses an in-house database (Firebird). \n" +
             "\n" +
             "The system itself (Labsys3) consisted of a wide range of features such as worksheet creation which then generated reports, invoices and quotes for our clients. The system also contained our client and staff contact information.\n" +
             "\n" +
@@ -304,8 +277,8 @@ Mock.onGet("/api/services").reply(config => {
   return [200, response];
 });
 
-Mock.onGet("/api/reviews").reply(config => {
-  const response = database.reviews;
+Mock.onGet("/api/achievements").reply(config => {
+  const response = database.achievements;
   return [200, response];
 });
 

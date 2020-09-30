@@ -8,30 +8,6 @@ import Layout from "../components/Layout";
 function About(){
   const [toggler, setToggler] = useState(false);
   const [information, setInformation] = useState("");
-  const [services, setServices] = useState([]);
-  const [reviews, setReviews] = useState([]);
-
-  const sliderSettings = {
-    dots: false,
-    infinite: true,
-    arrows: false,
-    speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 2,
-    autoplay: true,
-    autoplaySpeed: 6000,
-    pauseOnHover: true,
-    adaptiveHeight: true,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      },
-    ]
-  };
 
   const handleToggler = (event) => {
     setToggler({
@@ -39,18 +15,22 @@ function About(){
     })
   }
 
+  const renderHobbies = (hobbies) => {
+    return (
+        <div className="row justify-content-center">
+          <div className="col-12">
+            {hobbies.map(hobby => {
+              return <li>{hobby.title}</li>
+            })}
+          </div>
+        </div>
+    );
+  }
+
   useEffect(() =>{
     axios.get('/api/information')
       .then(response =>{
         setInformation(response.data)
-      })
-    axios.get('/api/services')
-      .then(response =>{
-        setServices(response.data)
-      })
-    axios.get('/api/reviews')
-      .then(response =>{
-        setReviews(response.data)
       })
   }, [])
 
@@ -100,14 +80,11 @@ function About(){
                   {!information.nationality ? null : <li>
                     <b>Nationality</b> {information.nationality}
                   </li>}
-                  {!information.email ? null : <li>
-                    <b>Email</b> {information.email}
+                  {!information.hobbies ? null : <li>
+                    <b>Hobbies</b> {renderHobbies(information.hobbies)}
                   </li>}
                   {!information.address ? null : <li>
                     <b>Address</b> {information.address}
-                  </li>}
-                  {!information.freelanceStatus ? null : <li>
-                    <b>Freelance</b> {information.freelanceStatus}
                   </li>}
                 </ul>
                 <a href={information.cvfile} className="mi-button">Download CV</a>
@@ -116,44 +93,6 @@ function About(){
           </div>
         </div>
       </div>
-      <div className="mi-service-area mi-section mi-padding-top">
-        <div className="container">
-          <Sectiontitle padBottom={true} title="Hobbies" />
-          <div className="row justify-content-center">
-            <div className="col-12">
-              <li>
-                Rugby
-              </li>
-              <li>
-                Rugby League
-              </li>
-              <li>
-                Cricket
-              </li>
-              <li>
-                Poker
-              </li>
-              <li>
-                Crosswords
-              </li>
-            </div>
-          </div>
-        </div>
-      </div>
-     {/* <div className="mi-review-area mi-section mi-padding-top mi-padding-bottom">
-        <div className="container">
-          <Sectiontitle title="Reviews" />
-          <div className="row justify-content-center">
-            <div className="col-12">
-              <Slider className="mi-testimonial-slider" {...sliderSettings}>
-                {reviews.map(review =>(
-                  <Testimonial key={review.id} content={review}/>
-                ))}
-              </Slider>
-            </div>
-          </div>
-        </div>
-      </div>*/}
     </Layout>
   );
 }

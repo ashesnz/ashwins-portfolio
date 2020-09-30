@@ -33,10 +33,14 @@ function Header(){
                     <li><NavLink exact to="/"><span>Home</span></NavLink></li>
                     <li><NavLink to="/about"><span>About</span></NavLink></li>
                     <li><NavLink to="/resume"><span>Resume</span></NavLink></li>
-                    {/*<li><NavLink to="/portfolios"><span>Portfolios</span></NavLink></li>*/}
+                    <li><NavLink to="/portfolios"><span>Portfolios</span></NavLink></li>
                     <li><NavLink to="/contact"><span>Contact</span></NavLink></li>
                 </ul>
-                <p className="mi-header-copyright">&copy; {new Date().getFullYear()} <b><a rel="noopener noreferrer" target="_blank" href="https://thakur.co.nz">Ashwin Thakur</a></b>                <p><small>Built with React</small></p>
+                <p className="mi-header-copyright">&copy; {new Date().getFullYear()} <b><a rel="noopener noreferrer" target="_blank" href="https://thakur.co.nz">Ashwin Thakur</a></b>
+                    <p>
+                        <small>Built with React</small><br/>
+                        <small>Hosted on AWS</small>
+                    </p>
                 </p>
 
             </div>
