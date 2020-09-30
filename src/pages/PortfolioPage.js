@@ -5,23 +5,23 @@ import Portfolio from '../components/Portfolio';
 import Sectiontitle from "../components/Sectiontitle";
 import Layout from "../components/Layout";
 
-function Portfolios() {
-  const [portfolios, setPortfoios] = useState([]);
+function PortfolioPage() {
+  const [portfolioPage, setPortfoioPage] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/portfolios')
+    axios.get('/api/portfolio')
       .then( response => {
-        setPortfoios(response.data);
+        setPortfoioPage(response.data);
       })
-  })
+  }, [])
 
   return (
     <Layout>
       <div className="mi-about mi-section mi-padding-top mi-padding-bottom">
         <div className="container">
-          <Sectiontitle title="Portfolios" />
+          <Sectiontitle title="Portfolio" />
           <div className="row mt-30-reverse">
-            {portfolios.map(portfolio => (
+            {portfolioPage.map(portfolio => (
               <TrackVisibility once offset={200} className="col-lg-4 col-md-6 col-12 mt-30" key={portfolio.id}>
                 <Portfolio content={portfolio}/>
               </TrackVisibility>
@@ -33,4 +33,4 @@ function Portfolios() {
   );
 }
 
-export default Portfolios;
+export default PortfolioPage;

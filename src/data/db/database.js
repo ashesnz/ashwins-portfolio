@@ -64,7 +64,7 @@ const database = {
       value: 90
     },
     {
-      title: "IOS and Android Hybrid Mobile App Development (Using Isomorphic JavaScript - Ionic Framework)",
+      title: "IOS and Android Hybrid Mobile App Development including React Native & Ionic Framework",
       value: 85
     },
     {
@@ -76,7 +76,7 @@ const database = {
       value: 75
     },
     {
-      title: "Postgres, MongoDb, Redis (DB services)",
+      title: "SQL experience with the following services Postgres, MongoDb, Redis",
       value: 75
     },
     {
@@ -89,34 +89,34 @@ const database = {
     spaceAwardImage: '/images/space-award.jpg',
   }
   ,
-  portfolios: [
+  portfolio: [
     {
       id: 1,
       title: "SPACE - Satellite Pasture Measurement Admin Platform",
       subtitle: "Angular, Ruby, AWS, Postgres",
       imageUrl: "/images/portfolio-space.jpg",
-   //   url: './portfolios/space'
+   //   url: './portfolio/space'
     },
     {
       id: 2,
       title: "Grazing Planner Mobile Application",
       subtitle: "Ionic Framework, Ruby, Docker, Postgres",
       imageUrl: "/images/portfolio-grazing.jpg",
-   //   url: './portfolios/grazing'
+   //   url: './portfolio/grazing'
     },
     {
       id: 3,
       title: "International Sire Selection Tool",
       subtitle: "React, Redux, .NET, Postgres, Docker",
       imageUrl: "/images/portfolio-sire-selection.jpg",
-   //   url: './portfolios/sire-selection'
+   //   url: './portfolio/sire-selection'
     },
     {
       id: 4,
       title: "Knowledge Base App - Ask & Tag Staff members with particular skillsets or knowledge",
       subtitle: "Vue.js, Ruby, Docker, AWS",
       imageUrl: "/images/portfolio-knowledge-base.jpg",
-  //    url: './portfolios/knowledge-base'
+  //    url: './portfolio/knowledge-base'
     },
     {
       id: 5,
@@ -124,7 +124,7 @@ const database = {
       subtitle: "Vue.js, GIS, Postgres, AWS (Lambdas)",
       imageUrl: "/images/portfolio-project-alive.jpg",
       // largeImageUrl: ["/images/portfolio-image-5-lg.jpg"],
-   //   url: './portfolios/project-alive'
+   //   url: './portfolio/project-alive'
     },
     {
       id: 6,
@@ -140,10 +140,10 @@ const database = {
         year: "Dec 2019 - Present",
         position: "Software Developer",
         company: "Livestock Improvement Automation",
-        details: ".NET and Angular development with Azure DevOps, upgrading their core automation product (Protrack™). " +
-            "Agile processes such as team iteration planning and retrospective and a 3 monthly PI Planning session." +
-            " Requirements were discussed closely with Product Owners/Product design Analysts/Testers and other developers in delivering " +
-            "these core features."
+        details: ".NET and Angular development with Azure DevOps, upgrading their core farm automation system (Protrack™). " +
+            "Agile processes such as team iteration planning and retrospective and a 3 monthly PI Planning session were " +
+            "done consistently while implementing new features. Requirements were discussed closely with " +
+            "Product Owners/Product Design Analysts/Testers and other developers in delivering these core features."
       },
       {
         id: 2,
@@ -192,7 +192,7 @@ const database = {
         details: "Primarily responsible for providing application support to HRS clients via phone/email.\n" +
             "\n" +
             "The products were mathematics-based software for data analysis and modelling, such as Matlab, STATISTICA, Mathcad, Mathematica, ChemOffice, @RISK, Forecast Pro, SurveyPro.\n" +
-            "Other tasks included the maintenance of an existing 200-page web site.\n"
+            "Other tasks included the maintenance of an existing 200-page website.\n"
       }
     ],
     educationExperience: [
@@ -287,8 +287,8 @@ Mock.onGet("/api/skills").reply(config => {
   return [200, response];
 });
 
-Mock.onGet("/api/portfolios").reply(config => {
-  const response = database.portfolios;
+Mock.onGet("/api/portfolio").reply(config => {
+  const response = database.portfolio;
   return [200, response];
 });
 

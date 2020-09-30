@@ -19,9 +19,11 @@ function About(){
     return (
         <div className="row justify-content-center">
           <div className="col-12">
-            {hobbies.map(hobby => {
-              return <li>{hobby.title}</li>
-            })}
+            <ul>
+              {hobbies.map(hobby => {
+                return <li key={hobby.title}>{hobby.title}</li>
+              })}
+            </ul>
           </div>
         </div>
     );

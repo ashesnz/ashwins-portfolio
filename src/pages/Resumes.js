@@ -19,7 +19,6 @@ function Resumes(){
   useEffect(() =>{
     axios.get('/api/achievements')
         .then(response =>{
-          console.log(response.data);
           setAchievements(response.data);
         })
     axios.get('/api/skills')

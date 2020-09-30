@@ -4,7 +4,7 @@ import "./App.scss";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Resumes from "./pages/Resumes";
-import Portfolios from "./pages/Portfolios";
+import PortfolioPage from "./pages/PortfolioPage";
 import Contact from "./pages/Contact";
 import Fib from './pages/Fib';
 
@@ -15,7 +15,7 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/about" component={About} />
         <Route path="/resume" component={Resumes} />
-        <Route path="/portfolios" component={Portfolios} />
+        <Route path="/portfolio" component={PortfolioPage} />
         <Route path="/contact" component={Contact} />
         <Route path="/fib" component={Fib} />
       </Switch>
